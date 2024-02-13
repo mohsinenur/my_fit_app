@@ -11,7 +11,7 @@ const cors = Cors({
 const oAuth2Client = new OAuth2Client(
   "798513138133-8q428nvjp71olpff3aedq2ujpbckk4jl.apps.googleusercontent.com",
   "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",
-  "http://localhost:3000/dashboard"
+  "https://zero-fitness01.netlify.app/dashboard"
 );
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
