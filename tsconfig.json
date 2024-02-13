@@ -28,7 +28,7 @@
     ".next/types/**/*.ts",
     "**/*.ts",
     "**/*.tsx"
-  ],
+, "pages/api/googleFit/callback.js"  ],
   "exclude": [
     "node_modules"
   ]
