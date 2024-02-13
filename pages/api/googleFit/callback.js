@@ -21,8 +21,19 @@ const handler = async (req, res) => {
     oAuth2Client.setCredentials(tokens);
 
     // Set start and end time for data aggregation
-    const startTimeMillis = Date.now() - 8 * 24 * 60 * 60 * 1000; // Example: 7 days ago
-    const endTimeMillis = Date.now(); // Current time
+    const endTimeMillisInTS = Date.now() + 24 * 60 * 60 * 1000;
+
+    // Convert to UTC Unix time
+    const endTimeUTC = Date.parse(new Date(endTimeMillisInTS).toUTCString());
+
+    // Calculate 7 days before and reset to start of the day
+    const sevenDaysBefore = 7 * 24 * 60 * 60 * 1000;
+    const startTimeMillis = Date.parse(new Date(endTimeUTC - sevenDaysBefore).toISOString().split('T')[0]);
+
+    // Adjust the endTimeUTC to the end of the day
+    const endOfDayMillis = 24 * 60 * 60 * 1000 - 1; // 23:59:59.999
+    const endTimeMillis = endTimeUTC - (2 * 24 * 60 * 60 * 1000) + endOfDayMillis;
+
 
     const fitness = google.fitness({ version: "v1", auth: oAuth2Client });
 

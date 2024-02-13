@@ -18,7 +18,7 @@ const DashboardPage = () => {
 
   const handleAuthorizationCode = async (code) => {
     try {
-      const response = await fetch(`/api/googleFit/callback?code=${code}`);
+      const response = await fetch(`https://api-fit-app.netlify.app/api/googleFit/callback?code=${code}`);
       const data = await response.json();
       console.log(data);
       if (data.isRedirectedToHome) {
