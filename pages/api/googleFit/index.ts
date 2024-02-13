@@ -11,7 +11,7 @@ const cors = Cors({
 const oAuth2Client = new OAuth2Client(
   "798513138133-8q428nvjp71olpff3aedq2ujpbckk4jl.apps.googleusercontent.com",
   "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",
-  "https://zero-fitness01.netlify.app/dashboard"
+  "http://localhost:3000/dashboard"
 );
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
@@ -30,7 +30,6 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
       access_type: "offline",
       scope: SCOPES,
     });
-    console.log(authUrl);
     res
       .status(200)
       .json({ message: "Get API for google fit", authUrl: authUrl });
