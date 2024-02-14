@@ -15,7 +15,7 @@ const RedirectPage = () => {
   const handleAuthorizationCode = async (code) => {
     try {
       const encodedCode = encodeURIComponent(code);
-      window.location.href = `https://zero-fitness01.netlify.app/#/dashboard?code=${encodedCode}`;
+      window.location.href = `https://zero-fitness01.netlify.app/dashboard?code=${encodedCode}`;
     } catch (error) {
       console.error('Redirect failed:', error);
     }
