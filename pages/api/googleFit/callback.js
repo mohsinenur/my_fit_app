@@ -10,7 +10,8 @@ const cors = Cors({
 const oAuth2Client = new OAuth2Client(
   "1057655363182-ibsiskiieg92t41t5ofk5hvu39q6kmlq.apps.googleusercontent.com",
   "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",
-  "https://zero-fitness01.netlify.app/fit.html"
+  // "https://zero-fitness01.netlify.app/fit.html"
+  "http://localhost:3000/fit.html"
 );
 
 const handler = async (req, res) => {
