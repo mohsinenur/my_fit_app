@@ -9,7 +9,7 @@ const cors = Cors({
 });
 
 const oAuth2Client = new OAuth2Client(
-  "1057655363182-ibsiskiieg92t41t5ofk5hvu39q6kmlq.apps.googleusercontent.com",
+  "798513138133-8q428nvjp71olpff3aedq2ujpbckk4jl.apps.googleusercontent.com",
   "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",
   // "https://zero-fitness01.netlify.app/fit.html"
   "http://localhost:3000/fit.html"
