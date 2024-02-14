@@ -10,13 +10,13 @@ const cors = Cors({
 const oAuth2Client = new OAuth2Client(
   "798513138133-8q428nvjp71olpff3aedq2ujpbckk4jl.apps.googleusercontent.com",
   "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",
-  "https://zero-fitness01.netlify.app/dashboard"
+  "https://zero-fitness01.netlify.app/#/dashboard"
 );
 
 const handler = async (req, res) => {
   try {
     const { code } = req.query;
-    console.log(code);
+    // console.log(code);
     const { tokens } = await oAuth2Client.getToken(code);
     oAuth2Client.setCredentials(tokens);
 
