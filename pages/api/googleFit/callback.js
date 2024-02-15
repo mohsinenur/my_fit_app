@@ -203,7 +203,7 @@ const handler = async (req, res) => {
     res.status(200).json({ data: formattedData, isRedirectedToHome: true });
   } catch (error) {
     console.error("Error:", error);
-    res.status(500).json({ error: "Internal Server Error" });
+    res.status(500).json({ error: error });
   }
 };
 
