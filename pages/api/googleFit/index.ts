@@ -8,12 +8,7 @@ const cors = Cors({
   origin: "*",
 });
 
-const oAuth2Client = new OAuth2Client(
-  "798513138133-8q428nvjp71olpff3aedq2ujpbckk4jl.apps.googleusercontent.com",
-  "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",
-  // "https://zero-fitness01.netlify.app/fit.html"
-  "https://zero-fitness01.netlify.app/fit.html"
-);
+const oAuth2Client = new OAuth2Client("798513138133-8q428nvjp71olpff3aedq2ujpbckk4jl.apps.googleusercontent.com","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","https://zero-fitness01.netlify.app/fit.html");
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   try {
